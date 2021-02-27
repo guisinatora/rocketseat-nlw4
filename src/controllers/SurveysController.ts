@@ -4,7 +4,7 @@ import { SurveysRepository } from "../repositories/SurveysRepository";
 
 class SurveysController {
   async create(request: Request, response: Response) {
-    const {title, description} = request.body;
+    const { title, description } = request.body;
 
     const surveysRepository = getCustomRepository(SurveysRepository);
 
@@ -18,13 +18,15 @@ class SurveysController {
 
   }
 
-  
+
 
   async show(request: Request, response: Response) {
     const surveysRepository = getCustomRepository(SurveysRepository);
-    
+
     const all = await surveysRepository.find();
+
+    return response.json(all);
   }
 }
 
-export {SurveysController};
+export { SurveysController };

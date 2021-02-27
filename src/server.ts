@@ -1,14 +1,4 @@
-import 'reflect-metadata';
-import express from 'express';
-import "./database";
-import { router } from './routes';
-
-
-const app = express();
-
-app.use(express.json());
-
-app.use(router);
+import { app } from "./app";
 
 app.listen(3333, () => console.log("Server is UP!"));
 
@@ -19,6 +9,6 @@ app.listen(3333, () => console.log("Server is UP!"));
  * DELETE => Deletar
  * PATCH => Alteração específica
  *
- * 1 param => Rota
- * 2 param => request, response
+ * 1 parametro => Rota
+ * 2 parametro => request, response
  */
